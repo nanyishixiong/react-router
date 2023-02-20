@@ -18,6 +18,8 @@ export default function Link({ to, children }: LinkProps) {
 
   return <button
     type="button"
+    // button模拟实现a标签
+    // 原因: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md
     style={{
       backgroundColor: "transparent",
       border: 'none',
