@@ -8,7 +8,9 @@ interface RouterProps {
   children: ReactElement
   location: any
 }
-
+/**
+ * Router组件,将location,history对象共享到全局
+ */
 export const Router = ({ location, history, children }: RouterProps) => {
   const match = pathMatch("/", history.location.pathname)
 

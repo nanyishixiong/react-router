@@ -8,5 +8,5 @@ export interface ContextProps {
   history: BrowserHistory,
 }
 
-export const RouterContext = React.createContext<ContextProps>(null!)
+export const RouterContext = React.createContext<ContextProps>(null!) // 加个! 可以使createContext初始值为空,也不会报错
 

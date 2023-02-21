@@ -31,6 +31,13 @@ export default function Route({
   </RouterContext.Consumer>
 }
 
+/**
+ * 有子组件先渲染子组件,没有再匹配路由,渲染对应组件
+ * @param children
+ * @param element
+ * @param ctxValue
+ * @returns
+ */
 const getRenderChildren = (
   children: React.ReactNode | ((ctxValue: ContextProps) => ReactElement),
   element: ReactElement,

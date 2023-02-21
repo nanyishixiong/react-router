@@ -10,6 +10,7 @@ interface BrowserRouterProps {
 
 export default function BrowserRouter(props: BrowserRouterProps) {
 
+  // useref保存一个history对象
   const historyRef = useRef<BrowserHistory>(null!)
 
   if (!historyRef.current) {

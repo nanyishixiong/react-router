@@ -15,6 +15,7 @@ interface State {
 }
 type Listener = ({ location, action }: State) => void
 
+// ReturnType 获取函数的返回值类型
 export type BrowserHistory = ReturnType<typeof createBrowserHistory>
 
 export default function createBrowserHistory() {
@@ -40,8 +41,10 @@ export default function createBrowserHistory() {
     listeners.forEach(listener => listener({ location, action }));
   }
 
+  // 暴露出listen函数,给组件监听URL变化的接口
   function listen(listener: Listener) {
     listeners.push(listener);
+    // 返回一个移除监听的函数
     return () => {
       listeners = listeners.filter(item => {
         return item !== listener
@@ -49,6 +52,7 @@ export default function createBrowserHistory() {
     }
   }
 
+  // 监听pop方法,和用户前进后退,改变location的状态
   window.addEventListener('popstate', () => {
     let windowLocation = window.location
     setState({
